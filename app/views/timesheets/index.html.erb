@@ -1,0 +1,23 @@
+<h1>Timesheets</h1>
+
+<table id="timesheets">
+  <tr class="thead">
+    <th>Description</th>
+    <th>Total Time</th>
+    <th>Pay Rate</th>
+    <th>Total Cost</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @timesheets.each do |timesheet| %>
+    <tr>
+      <td><%= link_to timesheet.description, timesheet %></td>
+      <td><%= timesheet.total_time %></td>
+      <td><%= timesheet.rate %></td>
+      <td><%= timesheet.total_cost %></td>
+      <td><%= link_to "Edit", edit_timesheet_path(timesheet), :class => "cancel_button", :style => "color:#fff" %></td>
+      <td><%= link_to "Delete", timesheet_path(timesheet), data: {:confirm => "Are you sure?"}, :method => :delete, :class => "delete_button", :style => "color:#fff" %></td>
+    </tr>
+  <% end %>
+  <tr><td><%= link_to "New Timesheet", new_timesheet_path %><td></tr>
+</table>

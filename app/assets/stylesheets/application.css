@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+   font-family: Lucida Grande, Arial;
+ }
+ .thead {
+   background-color: #BDBDBD;
+ }
+ #timesheets {
+  width: 100%;
+  margin: 10px auto 50px auto;
+  border: 1px solid rgba(132,132,132,1);
+  font-family: Lucida Grande, Arial;
+}
+#timesheets tr {
+  border-bottom: 1px solid rgba(132,132,132,1);
+}
+#timesheets td {
+  padding: 10px;
+}
+#timesheets td a {
+  text-decoration: none;
+  color: #428bca;
+}
+#timesheets th {
+  padding: 15px 10px;
+  text-align: left;
+}
+.cancel_button {
+  padding: 10px 20px;
+  border: 0;
+  background-color: #585858;
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: Lucida Grande, Arial;
+  border-radius: 2px;
+}
+.submit_button {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 0;
+  background-color: #428bca;
+  color: #fff;
+  font-size: 14px;
+  display:inline-block;
+  font-family: Lucida Grande, Arial;
+  border-radius: 2px;
+}
+.delete_button {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 0;
+  background-color: red;
+  color: #fff;
+  font-size: 14px;
+  display:inline-block;
+  font-family: Lucida Grande, Arial;
+  border-radius: 2px;
+}

@@ -1,0 +1,15 @@
+<%= form_with model: [ @timesheet, @timesheet.line_items.build ] do |form| %>
+  <table>
+    <tr>
+      <td><%= form.label :date %></td>
+      <td><%= form.text_field :date %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :minutes %></td>
+      <td><%= form.text_field :minutes %></td>
+    </tr>
+    <tr>
+      <td><%= form.submit :class => "submit_button" %></tr>
+  </tr>
+  </table>
+<% end %>

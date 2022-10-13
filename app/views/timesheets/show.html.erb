@@ -1,0 +1,42 @@
+<h1><%= @timesheet.description %></h1>
+<%= link_to "Return", timesheets_path, :class => "cancel_button", :style => "color:#fff" %>
+<table id="timesheets">
+  <tr class="thead">
+    <th>Total Time</th>
+    <th>Pay Rate</th>
+    <th>Total Cost</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+  <td><%= @timesheet.total_time %></td>
+  <td><%= @timesheet.rate %></td>
+  <td><%= @timesheet.total_cost %></td>
+  <td><%= link_to "Edit", edit_timesheet_path(@timesheet), :class => "submit_button", :style => "color:#fff" %></td>
+  <td><%= link_to "Delete", timesheet_path(@timesheet), data: {:confirm => "Are you sure?"}, :method => :delete, :class => "delete_button", :style => "color:#fff" %></li>
+  </tr>
+</table>
+<h2>Line Items</h2>
+<table id="timesheets">
+  <thead>
+    <tr class="thead">
+      <th>Date</th>
+      <th>Minutes</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @timesheet.line_items.each do |line_item| %>
+      <tr>
+          <td><%= line_item.date %></td>
+          <td><%= line_item.minutes %></td>
+          <td><%= link_to "Edit", edit_timesheet_line_item_path(@timesheet, line_item), :class => "submit_button", :style => "color:#fff" %></td>
+          <td><%= link_to "Delete Line Item", [line_item.timesheet, line_item], data: {:confirm => "Are you sure?"}, :method => :delete, :class => "delete_button", :style => "color:#fff" %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Add Line Item</h2>
+<%= render 'line_items/form' %>

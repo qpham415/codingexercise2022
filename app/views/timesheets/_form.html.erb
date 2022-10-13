@@ -1,0 +1,16 @@
+<%= form_with model: @timesheet do |form| %>
+  <table>
+    <tr>
+      <td><%= form.label :description %></td>
+      <td><%= form.text_field :description %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :rate %></td>
+      <td><%= form.text_field :rate %></td>
+    </tr>
+    <tr>
+      <td><%= form.submit :class => "submit_button" %></td>
+      <td><%= link_to "Cancel", @timesheet, :class => "cancel_button" %></td>
+    </tr>
+  </table>
+<% end %>

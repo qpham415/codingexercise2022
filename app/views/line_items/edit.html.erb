@@ -1,0 +1,17 @@
+<h1>Edit Line Item</h1>
+<%= form_with(model: @line_item, url: [@timesheet, @line_item]) do |form| %>
+  <table>
+    <tr>
+    <td><%= form.label :date %></td>
+    <td><%= form.text_field :date %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :minutes %></td>
+      <td><%= form.text_field :minutes %></td>
+    </tr>
+    <tr>
+      <td><%= form.submit :class => "submit_button" %></td>
+    </tr>
+  </table>
+<% end %>
+<%= link_to "Cancel", @timesheet, :class => "cancel_button" %>
